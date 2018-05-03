@@ -36,6 +36,7 @@ public class DatasourceConfiguration {
 	
 	
 	@Bean(name="slaveDataSource")
+	@ConfigurationProperties(prefix="druid.slave")
 	public DataSource slaveDataSource() {
 		DataSource slaveDataSource = DataSourceBuilder.create().type(dataSourceType).build();
 		LOGGER.info("========SLAVE: {}=========",slaveDataSource);

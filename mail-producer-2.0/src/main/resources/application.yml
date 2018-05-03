@@ -7,7 +7,7 @@ server:
 druid: 
     type: com.alibaba.druid.pool.DruidDataSource
     master:
-        url: jdbc:mysql://192.168.1.31:3306/mail-1.0?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+        url: jdbc:mysql://192.168.11.240:3306/mail-1.0?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
         driver-class-name: com.mysql.jdbc.Driver
         username: root
         password: root
@@ -27,7 +27,7 @@ druid:
         filters: stat,wall,log4j
         useGlobalDataSourceStat: true
     slave: 
-        url: jdbc:mysql://192.168.1.32:3306/mail-1.0?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
+        url: jdbc:mysql://192.168.11.241:3306/mail-1.0?characterEncoding=UTF-8&autoReconnect=true&zeroDateTimeBehavior=convertToNull&useUnicode=true
         driver-class-name: com.mysql.jdbc.Driver
         username: root
         password: root
@@ -46,3 +46,7 @@ druid:
         maxPoolPreparedStatementPerConnectionSize: 20
         filters: stat,wall,log4j
         useGlobalDataSourceStat: true
+        
+mybatis:
+    type-aliases-package: com.zhan.mail
+    mapper-locations: classpath:com/zhan/mail/mapping/*.xml
